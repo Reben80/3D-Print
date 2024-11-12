@@ -1,0 +1,91 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import { galleryConfig, getImagePath } from '../utils/galleryConfig';
+
+const galleryItems = galleryConfig.map(item => ({
+  ...item,
+  image: getImagePath(item.student)
+}));
+---
+
+<Layout title="Gallery - 3D Printing in Mathematics">
+	<main>
+		<PageHeader 
+			title="Student Project Gallery"
+			subtitle="Calculus II-Honors-Math 182 Spring 2024"
+		/>
+		
+		<div class="gallery-grid">
+			{galleryItems.map((item) => (
+				<div class="gallery-item">
+					<img 
+						src={item.image} 
+						alt={`${item.title} by ${item.student}`}
+						onerror="this.src='/images/gallery/default-project.jpg'"
+					/>
+					<div class="item-info">
+						<h3>{item.title}</h3>
+						<p class="student">By {item.student}</p>
+						<p class="class">{item.class}</p>
+						<p class="description">{item.description}</p>
+					</div>
+				</div>
+			))}
+		</div>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1rem;
+		width: 1200px;
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+	.gallery-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+	}
+	.gallery-item {
+		background: rgba(var(--accent-dark), 0.2);
+		border-radius: 8px;
+		padding: 1rem;
+		transition: transform 0.2s;
+	}
+	.gallery-item:hover {
+		transform: translateY(-5px);
+	}
+	.gallery-item img {
+		width: 100%;
+		height: 300px;
+		object-fit: cover;
+		border-radius: 4px;
+		margin-bottom: 1rem;
+	}
+	.item-info h3 {
+		color: rgb(var(--accent-light));
+		margin-bottom: 0.5rem;
+		font-size: 1.4rem;
+	}
+	.student {
+		color: white;
+		font-weight: 500;
+		margin: 0.3rem 0;
+	}
+	.class {
+		color: rgb(var(--accent-light));
+		font-style: italic;
+		font-size: 0.9rem;
+		margin: 0.3rem 0;
+	}
+	.description {
+		margin-top: 0.8rem;
+		font-size: 0.95rem;
+		line-height: 1.5;
+	}
+</style>

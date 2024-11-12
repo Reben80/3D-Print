@@ -1,0 +1,95 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+---
+
+<Layout title="3D Printing in Mathematics">
+	<main>
+		<h1>3D Printing in <span class="text-gradient">Mathematics</span></h1>
+		<p class="tagline">
+			Bringing mathematical concepts to life through additive manufacturing
+		</p>
+
+		<div class="grid">
+			<Card
+				href="/gallery"
+				title="Project Gallery"
+				body="Explore our collection of 3D printed mathematical models and student projects."
+			/>
+			<Card
+				href="/students"
+				title="Student Showcase"
+				body="Meet our talented students and see their innovative mathematical 3D printing projects."
+			/>
+			<Card
+				href="/faculty"
+				title="Faculty"
+				body="Learn about our experienced educators integrating 3D printing into mathematics education."
+			/>
+			<Card
+				href="/about"
+				title="About Us"
+				body="Discover our mission to revolutionize mathematics education through 3D printing technology."
+			/>
+		</div>
+
+		<section class="intro">
+			<h2>Why 3D Printing in Mathematics?</h2>
+			<p>
+				3D printing technology enables students to transform abstract mathematical concepts into tangible objects,
+				fostering deeper understanding and engagement with complex mathematical principles.
+			</p>
+		</section>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1rem;
+		width: 800px;
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+	h1 {
+		font-size: 4rem;
+		font-weight: 700;
+		line-height: 1;
+		text-align: center;
+		margin-bottom: 0.5em;
+	}
+	.tagline {
+		text-align: center;
+		font-size: 1.5rem;
+		color: rgb(var(--accent-light));
+		margin-bottom: 2rem;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	.grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+		gap: 2rem;
+		padding: 0;
+		margin: 2rem 0;
+	}
+	.intro {
+		margin-top: 3rem;
+		padding: 2rem;
+		background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
+		border-radius: 8px;
+		border: 1px solid rgba(var(--accent-light), 25%);
+	}
+	.intro h2 {
+		color: rgb(var(--accent-light));
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+	}
+</style>

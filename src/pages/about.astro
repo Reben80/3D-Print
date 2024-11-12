@@ -1,0 +1,92 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/PageHeader.astro';
+---
+
+<Layout title="About - 3D Printing in Mathematics">
+	<main>
+		<PageHeader 
+			title="About Our Program" 
+			subtitle="Revolutionizing mathematics education through 3D printing technology"
+		/>
+		
+		<div class="content">
+			<section class="mission">
+				<h2>Our Mission</h2>
+				<p>
+					We aim to transform mathematics education by bridging the gap between abstract concepts 
+					and tangible understanding through innovative 3D printing technology.
+				</p>
+			</section>
+
+			<section class="features">
+				<h2>What We Offer</h2>
+				<div class="features-grid">
+					<div class="feature">
+						<h3>Hands-on Learning</h3>
+						<p>Students create physical models of mathematical concepts, enhancing understanding through tactile experience.</p>
+					</div>
+					<div class="feature">
+						<h3>Research Opportunities</h3>
+						<p>Undergraduate research projects combining mathematics, technology, and education.</p>
+					</div>
+					<div class="feature">
+						<h3>Advanced Technology</h3>
+						<p>Access to state-of-the-art 3D printing facilities and software for mathematical modeling.</p>
+					</div>
+					<div class="feature">
+						<h3>Interdisciplinary Approach</h3>
+						<p>Combining mathematics, engineering, and design thinking in innovative ways.</p>
+					</div>
+				</div>
+			</section>
+		</div>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1rem;
+		width: 800px;
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+	.content {
+		display: flex;
+		flex-direction: column;
+		gap: 3rem;
+	}
+	section {
+		background: rgba(var(--accent-dark), 0.2);
+		border-radius: 8px;
+		padding: 2rem;
+	}
+	h2 {
+		color: rgb(var(--accent-light));
+		font-size: 1.8rem;
+		margin-bottom: 1.5rem;
+	}
+	.features-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 2rem;
+		margin-top: 2rem;
+	}
+	.feature {
+		background: rgba(var(--accent-dark), 0.3);
+		padding: 1.5rem;
+		border-radius: 6px;
+		transition: transform 0.2s;
+	}
+	.feature:hover {
+		transform: translateY(-5px);
+	}
+	.feature h3 {
+		color: rgb(var(--accent-light));
+		font-size: 1.2rem;
+		margin-bottom: 0.5rem;
+	}
+</style>

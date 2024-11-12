@@ -1,0 +1,38 @@
+---
+interface Props {
+	title: string;
+	subtitle?: string;
+}
+
+const { title, subtitle } = Astro.props;
+---
+
+<div class="page-header">
+	<h1><span class="text-gradient">{title}</span></h1>
+	{subtitle && <p class="subtitle">{subtitle}</p>}
+</div>
+
+<style>
+	.page-header {
+		text-align: center;
+		margin-bottom: 3rem;
+	}
+	h1 {
+		font-size: 3rem;
+		font-weight: 700;
+		line-height: 1;
+		margin-bottom: 0.5em;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	.subtitle {
+		color: rgb(var(--accent-light));
+		font-size: 1.2rem;
+		margin-top: 1rem;
+	}
+</style>
